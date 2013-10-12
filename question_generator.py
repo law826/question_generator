@@ -49,10 +49,7 @@ class Database:
 
     def open_and_parse_input(self):
         with open(self.in_file, 'r') as f:
-            raw = f.read()
-            raw = raw.replace('\n', '')
-            raw = filter(lambda x: x in string.printable, raw)
-            self.st = nltk.sent_tokenize(raw)
+            self.st = f.readlines()
 
 # Create database instance.
 db = Database()
